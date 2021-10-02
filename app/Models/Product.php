@@ -15,11 +15,6 @@ class Product extends Model implements HasMedia
 
     protected $guarded = [];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
     protected static function boot()
     {
         parent::boot();
@@ -27,5 +22,11 @@ class Product extends Model implements HasMedia
         static::creating(function ($product) {
             $product->slug = Str::slug($product->title);
         });
+    }
+
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
