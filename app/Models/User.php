@@ -18,6 +18,11 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
+    public function Orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
