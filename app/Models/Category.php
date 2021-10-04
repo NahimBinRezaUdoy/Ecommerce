@@ -12,14 +12,14 @@ class Category extends Model
 
     protected $guarded = [];
 
-    protected static function boot()
-    {
-        parent::boot();
+    // protected static function boot()
+    // {
+    //     parent::boot();
 
-        static::create(function ($category) {
-            $category->slug = Str::slug($category->name);
-        });
-    }
+    //     static::create(function ($category) {
+    //         $category->slug = Str::slug($category->name);
+    //     });
+    // }
 
     public function parent_category()
     {
