@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function showDetails(Product $product)
     {
-        return view('frontend.showDetails', $product);
+        return view('frontend.showDetails', compact('product'));
     }
 
     public function index()
