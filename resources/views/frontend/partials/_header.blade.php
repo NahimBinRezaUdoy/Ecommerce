@@ -1,22 +1,22 @@
 <header>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
+        <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
       
         <div class=" navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
 
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
 
             @guest
             <div class="dropdown">
                 <button class="dropbtn">Categories</button>
                 <div class="dropdown-content">
-                  {{-- @foreach ($categories as $category)
+                  @foreach ($categories as $category)
                   <a href="{{ $category->slug }}">{{ $category->name }}</a>
-                  @endforeach --}}
+                  @endforeach
                 </div>
               </div>
             <li class="nav-item">

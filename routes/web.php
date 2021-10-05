@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['namespace' => 'Frontend'], function () {
-    Route::get('/', [HomeController::class, 'home']);
+    Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('/product/{product}', [ProductController::class, 'showDetails'])->name('showDetails');
 });
 
@@ -34,3 +36,13 @@ Route::put('admin/product/update/{product}', [ProductController::class, 'update'
 Route::delete('admin/product/delete/{product}', [ProductController::class, 'destroy'])->name('admin.product.delete');
 
 Route::get('admin/product/status/{status}/{product}', [ProductController::class, 'status']);
+
+//admin Category
+Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
+Route::get('/admin/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
+Route::post('/admin/category/store', [CategoryController::class, 'store'])->name('admin.category.store');
+Route::get('admin/category/edit]', [CategoryController::class, 'edit'])->name('admin.category.edit');
+Route::put('admin/category/update/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
+Route::delete('admin/category/delete/{category}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
+
+Route::get('admin/category/status/{status}/{category}', [CategoryController::class, 'status']);

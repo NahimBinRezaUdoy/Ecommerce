@@ -72,16 +72,6 @@
                         </li>
 
 
-                        <li class="@yield('coupon_select')">
-                            <a href="{{ url('admin/coupon') }}">
-                                <i class="fas fa-tag"></i>Coupon</a>
-                        </li>
-
-                        <li class="@yield('size_select')">
-                            <a href="{{ url('admin/size') }}">
-                                <i class="fas fa-tag"></i>Size</a>
-                        </li>
-
                         <li class="@yield('product_select')">
                             <a href="{{ url('admin/product') }}">
                                 <i class="fa fa-archive"></i>Product</a>
@@ -112,20 +102,6 @@
                                 <i class="fas fa-list"></i>Category</a>
                         </li>
 
-                        <li class="@yield('coupon_select')">
-                            <a href="{{ url('admin/coupon') }}">
-                                <i class="fas fa-tag"></i>Coupon</a>
-                        </li>
-
-                        <li class="@yield('size_select')">
-                            <a href="{{ url('admin/size') }}">
-                                <i class="fas fa-window-maximize"></i>Size</a>
-                        </li>
-
-                        <li class="@yield('color_select')">
-                            <a href="{{ url('admin/color') }}">
-                                <i class="fas fa-tint"></i>Color</a>
-                        </li>
 
                         <li class="@yield('product_select')">
                             <a href="{{ url('admin/product') }}">

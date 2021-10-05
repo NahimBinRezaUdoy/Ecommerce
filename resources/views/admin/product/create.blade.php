@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label for="title" class="control-label mb-1">title</label>
+                                            <label for="title" class="control-label mb-1">Title</label>
                                             <input id="title" name="title" value="{{ old('title') }}" type="text"
                                                 class="form-control" aria-required="true" aria-invalid="false" required>
 
@@ -84,24 +84,10 @@
                                             </select>
                                         </div> --}}
                                         <div class="col-md-4">
-                                            <label for="description" class="control-label mb-1">description</label>
+                                            <label for="description" class="control-label mb-1">Description</label>
                                             <input id="description" name="description" value="{{ old('description') }}" type="text"
                                                 class="form-control" aria-required="true" aria-invalid="false" required>
                                         </div>
-                                        {{-- <div class="col-md-4">
-                                            <label for="price" class="control-label mb-1">Price</label>
-                                            <input id="price" name="price" value="{{ old('price') }}" type="text"
-                                                class="form-control" aria-required="true" aria-invalid="false" required>
-                                        </div> --}}
-                                    </div>
-                                </div>
-
-
-                                
-
-
-                                <div class="form-group">
-                                    <div class="row">
                                         <div class="col-md-4">
                                             <label for="sale_price" class="control-label mb-1">Sale Price</label>
                                             <input id="sale_price" name="sale_price"
@@ -110,9 +96,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                
-
                             </div>
                         </div>
                     </div>

@@ -61,6 +61,7 @@ class ProductController extends Controller
         // $product->price = $request->price;
         $product->sale_price = $request->sale_price;
         $product->active = 1;
+        $product->status = 1;
         $product->save();
 
         $request->session()->flash('message', 'Product Added Successfully');
@@ -78,23 +79,31 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $request->validate([
-            'name' => 'required',
+            'title' => 'required',
+            'slug' => 'required|unique:products,slug' . $request->post('id'),
+            'image' => 'required|mimes:jpeg,jpg,png',
+            'description' => 'required',
+            // 'price' => 'required',
+            'sale_price' => 'required',
         ]);
 
 
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $extension = $image->extension();
+            $image_name = time() . '.' . $extension;
+            $image->storeAs('/public/media', $image_name);
+
+            $product->image = $image_name;
+        }
+
         $product->update([
-            'category_id' => $request->category_id,
-            'name' => $request->name,
+            'title' => $request->title,
+            'slug' => $request->slug,
 
             'slug' => $request->slug,
-            'brand' => $request->brand,
-            'model' => $request->model,
-            'short_desc' => $request->short_desc,
-            'desc' => $request->desc,
-            'keywords' => $request->keywords,
-            'technical_spacification' => $request->technical_spacification,
-            'uses' => $request->uses,
-            'warranty' => $request->warranty,
+            'description' => $request->description,
+            'sale_price' => $request->sale_price,
         ]);
 
         $request->session()->flash('message', 'Product Updated Successfully');
