@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -18,8 +19,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
+//Authentication
+Route::get('/register', [AuthenticationController::class, 'register'])->name('register');
+Route::post('/register', [AuthenticationController::class, 'registerProcess'])->name('registerProcess');
+Route::get('/login', [AuthenticationController::class, 'login'])->name('login');
+Route::post('/login', [AuthenticationController::class, 'loginProcess'])->name('loginProcess');
+Route::get('/logout', [AuthenticationController::class, 'logout'])->name('logout');
+//FrontEnd
 Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('/product/{product}', [ProductController::class, 'showDetails'])->name('showDetails');

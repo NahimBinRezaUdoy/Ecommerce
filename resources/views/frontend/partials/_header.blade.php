@@ -20,11 +20,11 @@
                 </div>
               </div>
             <li class="nav-item">
-              <a class="nav-link" href="#">Create An Accout</a>
+              <a class="nav-link" href="{{ route('register') }}">Create An Accout</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link " href="#">Login</a>
+              <a class="nav-link " href="{{ route('login') }}">Login</a>
             </li>
             @endguest
 
@@ -34,7 +34,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link " href="#">Logout</a>
+              <a class="nav-link " href="{{ route('logout') }}">Logout</a>
             </li>
             @endauth
 
