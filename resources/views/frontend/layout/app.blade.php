@@ -27,7 +27,7 @@
           
 
         
-        <script src="{{ mix('js/all.js') }}">
+        <script src="{{ mix('js/app.js') }}">
         @yield('before_body')
     </body>
 </html>

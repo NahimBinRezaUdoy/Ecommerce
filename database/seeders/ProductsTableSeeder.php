@@ -14,7 +14,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Product::factory(1)->create();
+        \App\Models\Product::factory(20)->create();
 
         $products = Product::select('id')->get();
 

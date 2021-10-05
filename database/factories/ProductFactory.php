@@ -25,10 +25,11 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'category_id' => '7',
-            'title' => 'title 7',
-            'description' => 'description 7',
-            'price' => '7000',
+            'category_id' => Category::all()->random()->id,
+            'title' => $this->faker->jobTitle,
+            'description' => $this->faker->realText(),
+            // 'price' => random_int(100, 1000),
+            'image' => 'https://source.unsplash.com/random',
         ];
     }
 }

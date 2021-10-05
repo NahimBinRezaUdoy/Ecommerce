@@ -14,9 +14,9 @@
             <div class="dropdown">
                 <button class="dropbtn">Categories</button>
                 <div class="dropdown-content">
-                  @foreach ($categories as $category)
+                  {{-- @foreach ($categories as $category)
                   <a href="{{ $category->slug }}">{{ $category->name }}</a>
-                  @endforeach
+                  @endforeach --}}
                 </div>
               </div>
             <li class="nav-item">
