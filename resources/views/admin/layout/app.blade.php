@@ -66,6 +66,11 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
+                        <li class="@yeild('user_select')">
+                            <a href="{{ url('admin/users') }}">
+                                <i class="fas fa-list"></i>Users</a>
+                        </li>
+
                         <li class="@yield('category_select')">
                             <a href="{{ url('admin/category') }}">
                                 <i class="fas fa-list"></i>Category</a>
@@ -95,6 +100,11 @@
                         <li class="@yield('dashboard_select')">
                             <a href="{{ url('admin/dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+
+                        <li class="@yeild('user_select')">
+                            <a href="{{ url('admin/users') }}">
+                                <i class="fas fa-list"></i>Users</a>
                         </li>
 
                         <li class="@yeild('category_select')">

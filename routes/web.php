@@ -33,6 +33,11 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
+
+//admin site showing users
+Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users.index');
+Route::delete('admin/user/delete/{user}', [AdminController::class, 'deleteUser'])->name('admin.user.delete');
+
 //admin Product
 Route::get('/admin/product', [ProductController::class, 'index'])->name('admin.product.index');
 Route::get('/admin/product/create', [ProductController::class, 'create'])->name('admin.product.create');
@@ -47,7 +52,7 @@ Route::get('admin/product/status/{status}/{product}', [ProductController::class,
 Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
 Route::get('/admin/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
 Route::post('/admin/category/store', [CategoryController::class, 'store'])->name('admin.category.store');
-Route::get('admin/category/edit]', [CategoryController::class, 'edit'])->name('admin.category.edit');
+Route::get('admin/category/edit/{category}', [CategoryController::class, 'edit'])->name('admin.category.edit');
 Route::put('admin/category/update/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
 Route::delete('admin/category/delete/{category}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
 
