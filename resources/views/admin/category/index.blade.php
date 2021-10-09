@@ -45,7 +45,7 @@
                                     <div class="row">
 
                                         <div class="col-md-3">
-                                            <a href="{{ route('admin.category.edit' , $category->id) }}">
+                                            <a href="{{ route('admin.category.edit' , $category) }}">
                                             <button class="btn btn-primary">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </button>
